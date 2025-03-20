@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --color-background: #e5e7eb;
+    --color-background-rgb: 229, 231, 235;
+    --color-text: #2d3748;
+    --color-primary: #4a5568;
+    --color-secondary: #718096;
+    --calorie-high: #fc8181;
+    --calorie-medium: #fbd38d;
+    --calorie-low: #9ae6b4;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --menu-background: #ffffff;
+    
+    /* Font ailelerini tanımla */
+    --font-heading: 'Varela Round', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  html {
+    background-color: var(--color-background);
+    height: 100%;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-text);
+    line-height: 1.5;
+    min-height: 100vh;
+    background-color: var(--color-background);
+  }
+  
+  #root {
+    min-height: 100vh;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }

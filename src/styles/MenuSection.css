@@ -1,0 +1,320 @@
+.menu-section {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.menu-section.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.today.menu-section {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  transition-delay: 0.1s;
+}
+
+.tomorrow.menu-section {
+  transition-delay: 0.15s;
+}
+
+.other-day.menu-section {
+  transition-delay: 0.2s;
+}
+
+.menu-title {
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-title h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0;
+  font-family: var(--font-heading);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.date-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+  margin: 0.5rem 0 0;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Fade-in animasyonu için stiller */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  padding: 1rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.menu-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.item-name {
+  font-size: 1.3rem;
+  color: var(--color-text);
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.calorie-badge {
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.calorie-badge.high {
+  background-color: var(--calorie-high);
+  color: white;
+}
+
+.calorie-badge.medium {
+  background-color: var(--calorie-medium);
+  color: #805600;
+}
+
+.calorie-badge.low {
+  background-color: var(--calorie-low);
+  color: #166534;
+}
+
+/* Kartlar arası boşluk için saydam alan */
+.menu-section + .menu-section {
+  margin-top: 2rem;
+}
+
+/* Kartlar arası boşluk */
+.menu-list > div:not(.menu-section) {
+  height: 2rem;
+  background-color: transparent;
+}
+
+.total-calories {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
+}
+
+.section-visible .total-calories {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.total-calorie-badge {
+  font-size: 1.4rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  background: linear-gradient(
+    135deg,
+    #a855f7 0%,
+    #7e22ce 25%,
+    #18181b 50%,
+    #fbbf24 75%,
+    #a855f7 100%
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.6),
+               0 0 30px rgba(168, 85, 247, 0.4);
+  animation: gradient-shift 6s linear infinite;
+  position: relative;
+}
+
+.total-calorie-badge::after {
+  content: '';
+  position: absolute;
+  inset: -10px -20px;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.15) 0%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  z-index: -1;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.8),
+                 0 0 40px rgba(168, 85, 247, 0.6),
+                 0 0 60px rgba(251, 191, 36, 0.3);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.9),
+                 0 0 50px rgba(168, 85, 247, 0.7),
+                 0 0 70px rgba(251, 191, 36, 0.4);
+  }
+}
+
+.closed-message {
+  font-size: 1.4rem;
+  color: var(--color-secondary);
+  font-family: var(--font-heading);
+  text-align: center;
+  margin-top: 1.5rem;
+  text-transform: lowercase;
+}
+
+@media (max-width: 768px) {
+  .menu-section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+
+  .today.menu-section {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+
+  .menu-title h2 {
+    font-size: 2rem;
+  }
+
+  .tomorrow .menu-title h2 {
+    font-size: 2rem;
+  }
+
+  .other-day .menu-title h2 {
+    font-size: 2rem;
+  }
+
+  .date-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .menu-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .item-name {
+    font-size: 1.2rem;
+  }
+
+  .calorie-badge {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .total-calorie-badge {
+    font-size: 1.3rem;
+  }
+
+  .closed-message {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-section {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .menu-title {
+    margin-bottom: 2rem;
+  }
+
+  .menu-title h2 {
+    font-size: 2.5rem;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.5rem;
+  }
+
+  .tomorrow .menu-title h2 {
+    font-size: 2.5rem;
+  }
+
+  .other-day .menu-title h2 {
+    font-size: 2.25rem;
+  }
+
+  .date-subtitle {
+    font-size: 1rem;
+  }
+
+  .closed-message {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .menu-section {
+    padding: 1rem;
+  }
+
+  .menu-title h2 {
+    font-size: 2.25rem;
+  }
+
+  .tomorrow .menu-title h2 {
+    font-size: 2.25rem;
+  }
+
+  .other-day .menu-title h2 {
+    font-size: 2rem;
+  }
+}

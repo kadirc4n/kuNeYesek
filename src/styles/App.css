@@ -1,0 +1,148 @@
+.app {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+}
+  
+.main-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 35vh auto 0;
+    padding: 0;
+    flex: 1;
+    background: transparent;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+  
+
+html, body, #root {
+    height: 100%;
+}
+
+/* Arkaplan için sahte element */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(110, 142, 251, 0.4), rgba(167, 119, 227, 0.4));
+    z-index: -1;
+    pointer-events: none;
+}
+
+.loading-container, .error-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 2rem;
+}
+  
+.loading, .error {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    background-color: var(--menu-background);
+    border-radius: 16px;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+  
+.loading p, .error p {
+    margin-bottom: 3rem;
+}
+  
+.error {
+    color: var(--calorie-high);
+}
+
+.blur-footer-card {
+    margin-top: auto;
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 5rem;
+}
+  
+.footer {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+}
+
+.footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+
+.footer a:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+}
+  
+@media (max-width: 768px) {
+    .app {
+        padding: 15px;
+    }
+    
+    .main-content {
+        margin-top: 40vh;
+        padding: 0;
+        background: none;
+    }
+    
+    /* Mobil için arkaplan */
+    body::before {
+        background: linear-gradient(135deg, rgba(110, 142, 251, 0.5), rgba(167, 119, 227, 0.5));
+    }
+    
+    .blur-footer-card {
+        margin-bottom: 1.5rem;
+        margin-top: 4rem;
+    }
+    
+    .footer {
+        padding: 1.5rem;
+    }
+    
+    .footer p {
+        font-size: 1rem;
+    }
+}

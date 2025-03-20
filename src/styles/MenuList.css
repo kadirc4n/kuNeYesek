@@ -1,0 +1,158 @@
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: transparent;
+    position: relative;
+    min-height: 100%;
+}
+  
+.menu-list > * {
+    margin: 0;
+}
+  
+.no-menu {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+  
+.no-menu h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    text-transform: lowercase;
+}
+  
+.no-menu p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+  
+.other-days {
+    margin-top: 0;
+    background-color: transparent;
+}
+  
+.other-days-title {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0;
+    color: #2c3e50;
+    text-transform: lowercase;
+    font-family: var(--font-heading);
+    letter-spacing: -0.03em;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+  
+.other-days-content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+  
+/* Kartlar arası boşluk */
+.menu-section-spacer {
+    height: 2rem;
+    background-color: transparent;
+}
+  
+/* Footer için özel stil */
+.blur-footer-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.blur-footer-card .footer {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.blur-footer-card .footer p {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+}
+
+.blur-footer-card .footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 500;
+}
+
+.blur-footer-card .footer a:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+}
+
+/* Sayfanın tam yükseklik alması için */
+html, body, #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+  
+@media (max-width: 768px) {
+    .menu-list {
+        gap: 1.5rem;
+    }
+    
+    .no-menu {
+        padding: 20px;
+    }
+    
+    .no-menu h2 {
+        font-size: 1.5rem;
+    }
+    
+    .other-days-title {
+        font-size: 2.5rem;
+        padding: 1.25rem 1.5rem;
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+    
+    .other-days-content {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .blur-footer-card .footer {
+        padding: 1.5rem;
+    }
+    
+    .blur-footer-card .footer p {
+        font-size: 1rem;
+    }
+}
