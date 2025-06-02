@@ -96,22 +96,22 @@ function MenuList({ menuData }) {
   let otherDaysMenus = menuData
     .filter((menu) => {
       const menuDate = new Date(menu.date);
-      const twoDaysFromNow = new Date(today);
-      twoDaysFromNow.setDate(today.getDate() + 2);
+      // Yarının tarihini al
+      const tomorrowDate = new Date(today);
+      tomorrowDate.setDate(today.getDate() + 1);
 
-      // Hafta sonu günleri hariç tutma
-      return menuDate >= twoDaysFromNow && !isWeekend(menuDate);
+      // yarından sonraki günleri ve hafta sonu olmayanlar
+      return menuDate > tomorrowDate && !isWeekend(menuDate);
     })
     .sort((a, b) => new Date(a.date) - new Date(b.date))
     .filter(menu => menu.items && menu.items.length > 0); // Boş menüleri filtrele
 
-  // Pazar günü için: Gelecek haftanın Cuma gününü bul
+  // pazar günü için: gelecek haftanın cuma gününü bul
   if (isSunday) {
-    // Gelecek Cuma'yı bul (bugün Pazar, 5 gün ekle = Cuma)
     const nextFriday = addDays(today, 5);
     const nextFridayFormatted = format(nextFriday, "d MMMM yyyy", { locale: tr });
     
-    // Yarın için gösterilecek menüyü güncelle
+    //yarınki menü
     const nextFridayMenu = menuData.find((menu) => {
       const menuDate = new Date(menu.date);
       return (

@@ -1,12 +1,12 @@
 .header {
-  width: 100vw; /* Viewport genişliği */
-  height: 100vh; /* Viewport yüksekliği */
+  width: 100vw; /* Viewport */
+  height: 100vh; /* Viewport */
   margin: 0;
   padding: 0;
-  position: fixed; /* Sabit pozisyon */
+  position: fixed; /* fixed? */
   top: 0;
   left: 0;
-  z-index: 0; /* Menünün altında kalması için */
+  z-index: 0; /* to make under the menu */
   overflow: hidden;
 }
 
@@ -16,7 +16,7 @@
   display: block;
   margin: 0;
   padding: 0;
-  object-fit: cover; /* Resmi tam kaplayacak şekilde ayarla */
+  object-fit: cover;
 }
 
 .logo-container {

@@ -28,7 +28,7 @@ html, body, #root {
     height: 100%;
 }
 
-/* Arkaplan için sahte element */
+/* arkaplan */
 body::before {
     content: '';
     position: fixed;
@@ -128,7 +128,7 @@ body::before {
         background: none;
     }
     
-    /* Mobil için arkaplan */
+    /* mobil */
     body::before {
         background: linear-gradient(135deg, rgba(110, 142, 251, 0.5), rgba(167, 119, 227, 0.5));
     }

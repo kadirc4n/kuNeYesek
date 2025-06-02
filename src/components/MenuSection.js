@@ -109,7 +109,7 @@ function MenuSection({ title, menu, isToday, isTomorrow, isOtherDay }) {
     return match ? match[1] : null;
   };
 
-  // Toplam kaloriyi hesapla
+
   const totalCalories = menu.items.reduce((total, item) => {
     const calories = extractCalories(item);
     return total + (calories ? parseInt(calories) : 0);
